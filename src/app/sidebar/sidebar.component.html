@@ -1,0 +1,38 @@
+<div class="custom-sidebar" [ngClass]="{'collapsed': isCollapsed}">
+  <div class="sidebar-header">
+    <div class="avatar-wrapper">
+      <img src="path/to/avatar.jpg" class="avatar" *ngIf="!isCollapsed">
+    </div>
+  </div>
+  <div class="sidebar-content">
+    <div class="profile">
+      <div class="profile-info">
+        <h6 *ngIf="!isCollapsed">Bruno Rodrigues</h6>
+        <p *ngIf="!isCollapsed">Administrator</p>
+      </div>
+    </div>
+    <ul class="menu-list">
+      <li>
+        <a routerLink="/" title="Home">
+          <i class="fa fa-home"></i>
+          <span *ngIf="!isCollapsed">Home</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/cadastrocliente" title="Cadastro de Cliente">
+          <i class="fa fa-user-plus"></i>
+          <span *ngIf="!isCollapsed">Cadastro de Cliente</span>
+        </a>
+      </li>
+      <!-- Adicione mais links conforme necessário -->
+    </ul>
+  </div>
+</div>
+<div class="content-wrapper" [ngClass]="{'collapsed': isCollapsed}">
+  <button type="button" (click)="toggleSidebar()" class="menu-button">
+    <i class="fa" [ngClass]="{'fa-arrow-right': isCollapsed, 'fa-arrow-left': !isCollapsed}"></i>
+  </button>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+body {
+  background-color: #f0f0f0; /* Fundo claro */
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.custom-sidebar {
+  width: 250px;
+  background-color: #003153; /* Cor de fundo */
+  color: #fff;
+  height: 100vh; /* Ocupa toda a altura da tela */
+  position: fixed; /* Fixa na tela */
+  top: 0;
+  left: 0;
+  overflow: hidden; /* Remove a barra de rolagem externa */
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  margin-left: 250px; /* Largura do sidebar */
+  padding: 20px;
+  width: calc(100% - 250px); /* Calcula a largura restante */
+}
+
+.form-container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.card-header {
+  background-color: #0056b3; /* Azul mais escuro */
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.btn-primary {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-primary:hover {
+  background-color: #003580;
+  border-color: #003580;
+}
