@@ -1,27 +1,30 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { NgxSpinnerModule } from "ngx-spinner";
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientFormComponent } from './components/clienteform/client-form.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClientFormComponent,
     SidebarComponent,
-
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
-    RouterModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
     NgxSpinnerModule,
-    AppRoutingModule
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
