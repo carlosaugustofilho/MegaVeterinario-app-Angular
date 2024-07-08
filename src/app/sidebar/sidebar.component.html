@@ -1,4 +1,4 @@
-<div class="custom-sidebar" [ngClass]="{'collapsed': isCollapsed}">
+<div class="custom-sidebar shadow-lg" [ngClass]="{'collapsed': isCollapsed}">
   <div class="sidebar-header">
     <div class="avatar-wrapper">
       <img src="path/to/avatar.jpg" class="avatar" *ngIf="!isCollapsed">
@@ -19,15 +19,86 @@
         </a>
       </li>
       <li>
-        <a routerLink="/cadastrocliente" title="Cadastro de Cliente">
+        <a title="Cadastro" (click)="toggleSubmenu()">
           <i class="fa fa-user-plus"></i>
-          <span *ngIf="!isCollapsed">Cadastro de Cliente</span>
+          <span *ngIf="!isCollapsed">Cadastros</span>
+        </a>
+        <ul class="submenu-list" *ngIf="!isSubmenuCollapsed">
+          <li>
+            <a routerLink="/cadastrofuncionario" title="Cadastro de Funcionário">
+              <span *ngIf="!isCollapsed">Cadastro de Funcionário</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/cadastroveterinario" title="Cadastro de Veterinário">
+              <span *ngIf="!isCollapsed">Cadastro de Veterinário</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/cadastrocliente" title="Cadastro de Cliente">
+              <span *ngIf="!isCollapsed">Cadastro de Cliente</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a routerLink="/agendamentos" title="Agendamentos">
+          <i class="fa fa-calendar"></i>
+          <span *ngIf="!isCollapsed">Agendamentos</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/animais" title="Animais">
+          <i class="fa fa-paw"></i>
+          <span *ngIf="!isCollapsed">Animais</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/consultas" title="Consultas">
+          <i class="fa fa-stethoscope"></i>
+          <span *ngIf="!isCollapsed">Consultas</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/estoque" title="Estoque">
+          <i class="fa fa-warehouse"></i>
+          <span *ngIf="!isCollapsed">Estoque</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/exames" title="Exames">
+          <i class="fa fa-vial"></i>
+          <span *ngIf="!isCollapsed">Exames</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/fornecedores" title="Fornecedores">
+          <i class="fa fa-truck"></i>
+          <span *ngIf="!isCollapsed">Fornecedores</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/medicamentos" title="Medicamentos">
+          <i class="fa fa-pills"></i>
+          <span *ngIf="!isCollapsed">Medicamentos</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/pagamentos" title="Pagamentos">
+          <i class="fa fa-credit-card"></i>
+          <span *ngIf="!isCollapsed">Pagamentos</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/relatorios" title="Relatórios">
+          <i class="fa fa-chart-line"></i>
+          <span *ngIf="!isCollapsed">Relatórios</span>
         </a>
       </li>
     </ul>
   </div>
 </div>
-<div class="content-wrapper" [ngClass]="{'collapsed': isCollapsed}">
+<div class="content-wrapper shadow-lg" [ngClass]="{'collapsed': isCollapsed}">
   <button type="button" (click)="toggleSidebar()" class="menu-button">
     <i class="fa" [ngClass]="{'fa-arrow-right': isCollapsed, 'fa-arrow-left': !isCollapsed}"></i>
   </button>

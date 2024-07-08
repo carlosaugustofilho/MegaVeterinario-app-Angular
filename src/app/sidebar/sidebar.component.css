@@ -6,11 +6,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  overflow: hidden;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   transition: width 0.3s;
-  font-family: Arial, sans-serif; /* Fonte mais amigável */
+  font-family: Arial, sans-serif;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15); /* Regular shadow */
 }
 
 .custom-sidebar.collapsed {
@@ -25,7 +26,6 @@
   background-color: #003153;
   color: #fff;
   flex-shrink: 0;
-  font-size: 18px; /* Tamanho da fonte ajustado */
 }
 
 .avatar-wrapper {
@@ -39,7 +39,7 @@
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  border: 2px solid #fff; /* Borda branca */
+  border: 2px solid #fff;
 }
 
 .profile {
@@ -49,13 +49,13 @@
   flex-shrink: 0;
 }
 
-.profile-info h5 {
-  font-size: 16px; /* Tamanho da fonte ajustado */
+.profile-info h6 {
+  font-size: 16px;
   margin: 0;
 }
 
 .profile-info p {
-  font-size: 14px; /* Tamanho da fonte ajustado */
+  font-size: 14px;
   margin: 0;
   color: #d2d7dc;
 }
@@ -80,16 +80,26 @@
 .menu-list li a {
   text-decoration: none;
   color: #d2d7dc;
-  font-size: 14px; /* Tamanho da fonte ajustado */
+  font-size: 14px;
   display: block;
   padding: 10px 15px;
-  border-radius: 5px; /* Bordas arredondadas */
+  border-radius: 5px;
   transition: background-color 0.3s;
 }
 
 .menu-list li a:hover {
   color: #fff;
-  background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+  background-color: #0056b3;
+}
+
+.submenu-list {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.submenu-list li {
+  margin-bottom: 0.5rem;
 }
 
 .menu-button {
@@ -104,8 +114,35 @@
 .content-wrapper {
   margin-left: 250px;
   transition: margin-left 0.3s;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15); /* Regular shadow */
 }
 
 .content-wrapper.collapsed {
   margin-left: 60px;
+}
+
+/* Custom scrollbar styles */
+.custom-sidebar::-webkit-scrollbar {
+  width: 6px; /* Largura da barra de rolagem */
+}
+
+.custom-sidebar::-webkit-scrollbar-track {
+  background: #003153;
+}
+
+.custom-sidebar::-webkit-scrollbar-thumb {
+  background-color: #d2d7dc;
+  border-radius: 10px; /* Arredondar a borda */
+  border: 2px solid #003153; /* Cor da borda */
+}
+
+/* Remover setas */
+.custom-sidebar::-webkit-scrollbar-button {
+  display: none; /* Ocultar botões de seta */
+}
+
+/* For Firefox */
+.custom-sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: #d2d7dc #003153;
 }

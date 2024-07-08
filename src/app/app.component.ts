@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'salao-angular-app';
+  isCollapsed = false; // Estado do sidebar
+
+  toggleSidebar(): void {
+    this.isCollapsed = !this.isCollapsed; // Alterna o estado do sidebar
+  }
 }
