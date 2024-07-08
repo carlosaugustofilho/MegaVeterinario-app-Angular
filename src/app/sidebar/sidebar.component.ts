@@ -6,9 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-  isCollapsed = false; // Estado do sidebar
+  isCollapsed = false;
+  isSubmenuCollapsed = true;
 
   toggleSidebar(): void {
-    this.isCollapsed = !this.isCollapsed; // Alterna o estado do sidebar
+    this.isCollapsed = !this.isCollapsed;
+  }
+
+  toggleSubmenu(): void {
+    this.isSubmenuCollapsed = !this.isSubmenuCollapsed;
   }
 }
