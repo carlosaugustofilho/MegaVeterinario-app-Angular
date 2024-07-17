@@ -1,0 +1,111 @@
+<div class="container-fluid">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h4 class="mb-0">Cadastro de Funcionário</h4>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="funcionarioForm" (ngSubmit)="onSubmit()">
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" formControlName="nome">
+            <div *ngIf="funcionarioForm.get('nome')?.invalid && funcionarioForm.get('nome')?.touched" class="text-danger">
+              Nome é obrigatório
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="senha" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="senha" formControlName="senha">
+            <div *ngIf="funcionarioForm.get('senha')?.invalid && funcionarioForm.get('senha')?.touched" class="text-danger">
+              Senha é obrigatória
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="cargo" class="form-label">Cargo</label>
+            <input type="text" class="form-control" id="cargo" formControlName="cargo">
+            <div *ngIf="funcionarioForm.get('cargo')?.invalid && funcionarioForm.get('cargo')?.touched" class="text-danger">
+              Cargo é obrigatório
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+            <div *ngIf="funcionarioForm.get('email')?.invalid && funcionarioForm.get('email')?.touched" class="text-danger">
+              Email é obrigatório e deve ser válido
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="salario" class="form-label">Salário</label>
+            <input type="number" class="form-control" id="salario" formControlName="salario">
+          </div>
+          <div class="col-md-4">
+            <label for="beneficios" class="form-label">Benefícios</label>
+            <input type="text" class="form-control" id="beneficios" formControlName="beneficios">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="dataContratacao" class="form-label">Data de Contratação</label>
+            <input type="date" class="form-control" id="dataContratacao" formControlName="dataContratacao">
+            <div *ngIf="funcionarioForm.get('dataContratacao')?.invalid && funcionarioForm.get('dataContratacao')?.touched" class="text-danger">
+              Data de Contratação é obrigatória
+            </div>
+          </div>
+        </div>
+        <div formGroupName="endereco">
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label for="cep" class="form-label">CEP</label>
+              <input type="text" class="form-control" id="cep" formControlName="cep">
+              <div *ngIf="funcionarioForm.get('endereco.cep')?.invalid && funcionarioForm.get('endereco.cep')?.touched" class="text-danger">
+                CEP é obrigatório
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="rua" class="form-label">Rua</label>
+              <input type="text" class="form-control" id="rua" formControlName="rua">
+              <div *ngIf="funcionarioForm.get('endereco.rua')?.invalid && funcionarioForm.get('endereco.rua')?.touched" class="text-danger">
+                Rua é obrigatória
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="numero" class="form-label">Número</label>
+              <input type="text" class="form-control" id="numero" formControlName="numero">
+              <div *ngIf="funcionarioForm.get('endereco.numero')?.invalid && funcionarioForm.get('endereco.numero')?.touched" class="text-danger">
+                Número é obrigatório
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label for="bairro" class="form-label">Bairro</label>
+              <input type="text" class="form-control" id="bairro" formControlName="bairro">
+              <div *ngIf="funcionarioForm.get('endereco.bairro')?.invalid && funcionarioForm.get('endereco.bairro')?.touched" class="text-danger">
+                Bairro é obrigatório
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="cidade" class="form-label">Cidade</label>
+              <input type="text" class="form-control" id="cidade" formControlName="cidade">
+              <div *ngIf="funcionarioForm.get('endereco.cidade')?.invalid && funcionarioForm.get('endereco.cidade')?.touched" class="text-danger">
+                Cidade é obrigatória
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="estado" class="form-label">Estado</label>
+              <input type="text" class="form-control" id="estado" formControlName="estado">
+              <div *ngIf="funcionarioForm.get('endereco.estado')?.invalid && funcionarioForm.get('endereco.estado')?.touched" class="text-danger">
+                Estado é obrigatório
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

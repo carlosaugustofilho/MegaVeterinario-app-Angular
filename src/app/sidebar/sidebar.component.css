@@ -136,13 +136,4 @@
   border: 2px solid #003153; /* Cor da borda */
 }
 
-/* Remover setas */
-.custom-sidebar::-webkit-scrollbar-button {
-  display: none; /* Ocultar botões de seta */
-}
 
-/* For Firefox */
-.custom-sidebar {
-  scrollbar-width: thin;
-  scrollbar-color: #d2d7dc #003153;
-}
