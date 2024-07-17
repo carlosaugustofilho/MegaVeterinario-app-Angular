@@ -10,13 +10,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './components/home/home.component';
+import { FuncionarioFormComponent } from './components/funcionario-form/funcionario-form.component';
+import { FuncionarioListComponent } from './components/funcionario-list/funcionario-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClientFormComponent,
     SidebarComponent,
-    HomeComponent
+    HomeComponent,
+    FuncionarioFormComponent,
+    FuncionarioListComponent,
   ],
   imports: [
     BrowserModule,
